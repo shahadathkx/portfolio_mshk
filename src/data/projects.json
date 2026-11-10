@@ -1,0 +1,121 @@
+[
+  {
+    "id": "bazar-update",
+    "title": "BazarDor — Grocery Market Price Tracker",
+    "tagline": "Daily market grocery price tracking and price comparison web app",
+    "description": "Full-stack web application built to help users effortlessly track daily prices of essential groceries across local markets with real-time tickers, category dashboards, and authentication.",
+    "image": "/images/projects/bazar-update.png",
+    "tags": ["Next.js 16", "TypeScript", "Tailwind CSS v4", "MongoDB", "Better Auth", "Zod"],
+    "features": [
+      "Live marquee price ticker displaying real-time rates for popular grocery essentials",
+      "Category dashboards (Vegetables, Fish, Meat, Spices) with historical price trends",
+      "Secure user authentication with email/password and social login backed by Better Auth"
+    ],
+    "githubUrl": "https://github.com/shahadathkx/bazar-update",
+    "liveUrl": "https://bazar-update.vercel.app",
+    "category": "Full Stack",
+    "featured": true
+  },
+  {
+    "id": "dev-stack-builder",
+    "title": "Dev Stack Builder — Tech Stack Planner",
+    "tagline": "Interactive technology stack explorer, comparator & architect",
+    "description": "Responsive web tool for developers to explore modern technologies, compare tools side-by-side, analyze trade-offs, and curate customized project architecture stacks.",
+    "image": "/images/projects/dev-stack-builder.png",
+    "tags": ["React 19", "TypeScript", "Vite", "Tailwind CSS v4", "React-Toastify"],
+    "features": [
+      "Interactive stack curation sidebar with real-time selection, duplicate prevention & reset",
+      "Responsive layout with adaptive mobile drawer, tablet grid, and desktop sidebar",
+      "Smooth asynchronous loading states and interactive feedback alerts"
+    ],
+    "githubUrl": "https://github.com/shahadathkx/dev-stack-builder",
+    "liveUrl": "https://dev-stack-builder.vercel.app",
+    "category": "Frontend",
+    "featured": true
+  },
+  {
+    "id": "fit-log",
+    "title": "FitLog — Workout & Routine Tracker",
+    "tagline": "Dark-mode fitness tracker with dynamic workout libraries & plans",
+    "description": "Modern fitness application for fitness enthusiasts to browse comprehensive workout libraries, build daily workout plans, and track routines with persistent state.",
+    "image": "/images/projects/fit-log.png",
+    "tags": ["Next.js 16", "React 19", "Tailwind CSS", "Context API", "Local Storage"],
+    "features": [
+      "Dynamic workout library with live muscle-group data, durations, equipment, and calorie metrics",
+      "One-click 'Today's Plan' routine scheduler with advanced multi-parameter sorting",
+      "Seamless persistence across sessions using React Context and synchronized localStorage"
+    ],
+    "githubUrl": "https://github.com/shahadathkx/fit-log",
+    "liveUrl": "https://github.com/shahadathkx/fit-log",
+    "category": "Full Stack",
+    "featured": true
+  },
+  {
+    "id": "devsync-platform",
+    "title": "DevSync — Collaborative Project Workspace",
+    "tagline": "Real-time task Kanban and developer collaboration suite",
+    "description": "Full-stack collaborative workspace with drag-and-drop Kanban boards, team permissions, and real-time activity streams.",
+    "image": "/images/projects/devsync.png",
+    "tags": ["Next.js", "TypeScript", "Node.js", "Express", "MongoDB", "Tailwind CSS"],
+    "features": [
+      "JWT-based multi-tenant user authentication with password encryption",
+      "Interactive Kanban board with drag-and-drop state persistence",
+      "Optimized MongoDB aggregation pipeline for real-time progress metrics"
+    ],
+    "githubUrl": "https://github.com/shahadathkx/devsync-platform",
+    "liveUrl": "https://devsync-preview.vercel.app",
+    "category": "Full Stack",
+    "featured": false
+  },
+  {
+    "id": "shopnexus-ecommerce",
+    "title": "ShopNexus — Modern MERN E-Commerce",
+    "tagline": "Scalable storefront with multi-facet filters and Stripe payments",
+    "description": "High-performance e-commerce engine featuring product faceted filtering, persistent cart state, and Stripe checkout.",
+    "image": "/images/projects/shopnexus.png",
+    "tags": ["React.js", "Express.js", "MongoDB", "Node.js", "Tailwind CSS", "Stripe API"],
+    "features": [
+      "Dynamic multi-facet filter by category, price range, and rating",
+      "State management using Redux Toolkit with persistent local storage",
+      "Protected admin dashboard for inventory management"
+    ],
+    "githubUrl": "https://github.com/shahadathkx/shopnexus-mern",
+    "liveUrl": "https://shopnexus-store.vercel.app",
+    "category": "Full Stack",
+    "featured": false
+  },
+  {
+    "id": "algowave-visualizer",
+    "title": "AlgoWave — Interactive Algorithm Visualizer",
+    "tagline": "Educational suite for sorting, pathfinding, and graph search algorithms",
+    "description": "Educational web visualizer demonstrating sorting, pathfinding, and graph search algorithms with step-by-step playback.",
+    "image": "/images/projects/algowave.png",
+    "tags": ["TypeScript", "React.js", "Algorithms", "Canvas API", "Tailwind CSS"],
+    "features": [
+      "Step-by-step playback controls (speed slider, step forward, pause, and reset)",
+      "Real-time visual comparison of time and space complexity metrics",
+      "Smooth 60fps animations with optimized state batching"
+    ],
+    "githubUrl": "https://github.com/shahadathkx/algowave-visualizer",
+    "liveUrl": "https://algowave.vercel.app",
+    "category": "Engineering",
+    "featured": false
+  },
+  {
+    "id": "taskflow-api",
+    "title": "TaskFlow API — High-Throughput RESTful Backend",
+    "tagline": "Production-grade microservice architecture with rate limiting and logging",
+    "description": "Production-ready backend microservice with JWT auth, MongoDB indexing, Docker containerization, and automated Jest tests.",
+    "image": "/images/projects/taskflow.png",
+    "tags": ["Node.js", "Express.js", "MongoDB", "Jest", "JWT", "Docker"],
+    "features": [
+      "Centralized error handling middleware with custom operational error classes",
+      "Compound indexing on MongoDB collections reducing query response times by 40%",
+      "Automated unit and integration test coverage exceeding 85%"
+    ],
+    "githubUrl": "https://github.com/shahadathkx/taskflow-api",
+    "liveUrl": "https://taskflow-api-docs.vercel.app",
+    "category": "Backend / API",
+    "featured": false
+  }
+]
