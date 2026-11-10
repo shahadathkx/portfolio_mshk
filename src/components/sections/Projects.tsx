@@ -1,6 +1,5 @@
 "use client";
 
-import { useState } from "react";
 import Image from "next/image";
 import { motion, type Variants } from "framer-motion";
 import projectsData from "@/data/projects.json";
@@ -9,9 +8,7 @@ import { Card } from "@/components/ui/Card";
 import { Badge } from "@/components/ui/Badge";
 import {
   ExternalLink,
-  FolderGit2,
 } from "lucide-react";
-import { GithubIcon } from "@/components/ui/Icons";
 
 export interface ProjectItem {
   id?: string;
@@ -30,20 +27,7 @@ export interface ProjectItem {
 }
 
 export function Projects() {
-  const [selectedFilter, setSelectedFilter] = useState<string>("All");
-
   const projects: ProjectItem[] = projectsData as ProjectItem[];
-
-  // Dynamic categories based on available projects
-  const uniqueCategories = [
-    "All",
-    ...Array.from(new Set(projects.map((p) => p.category).filter(Boolean))),
-  ] as string[];
-
-  const filteredProjects =
-    selectedFilter === "All"
-      ? projects
-      : projects.filter((p) => p.category === selectedFilter);
 
   // Framer Motion variants
   const containerVariants: Variants = {
@@ -82,42 +66,12 @@ export function Projects() {
           transition={{ duration: 0.6 }}
         >
           <SectionHeading
-            badge="Featured Projects"
-            title="Production-Ready &"
-            titleHighlight="Full Stack Solutions"
-            subtitle="Explore real-world web applications and engineering projects built with modern technologies, scalable architectures, and clean code."
+            badge="Selected Projects"
+            title="Projects made"
+            titleHighlight="for people"
+            subtitle="A closer look at BazarDor and BookNook—two live web projects built to make everyday experiences better."
           />
         </motion.div>
-
-        {/* Category filter tabs */}
-        {uniqueCategories.length > 1 && (
-          <motion.div
-            initial={{ opacity: 0, y: 15 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-            className="flex flex-wrap items-center justify-center gap-2 mb-12"
-          >
-            {uniqueCategories.map((cat) => {
-              const isActive = selectedFilter === cat;
-              return (
-                <button
-                  key={cat}
-                  type="button"
-                  onClick={() => setSelectedFilter(cat)}
-                  aria-pressed={isActive}
-                  className={`text-xs sm:text-sm font-medium px-4 py-2 rounded-xl transition-all duration-300 cursor-pointer focus-visible:ring-2 focus-visible:ring-indigo-500 ${
-                    isActive
-                      ? "bg-indigo-600 text-white shadow-md shadow-indigo-500/25 scale-105"
-                      : "bg-white/80 dark:bg-zinc-900/80 backdrop-blur-md text-zinc-700 dark:text-zinc-300 hover:text-zinc-950 dark:hover:text-white border border-zinc-200/80 dark:border-zinc-800 hover:border-zinc-300 dark:hover:border-zinc-700"
-                  }`}
-                >
-                  {cat}
-                </button>
-              );
-            })}
-          </motion.div>
-        )}
 
         {/* Responsive Projects Grid */}
         <motion.div
@@ -127,10 +81,9 @@ export function Projects() {
           whileInView="visible"
           viewport={{ once: true, amount: 0.1 }}
         >
-          {filteredProjects.map((project, idx) => {
+          {projects.map((project, idx) => {
             const projectKey = project.id || `project-${idx}`;
             const tags = project.tags || project.techTags || [];
-            const githubLink = project.githubUrl || project.githubLink;
             const liveDemoLink = project.liveUrl || project.liveLink;
 
             return (
@@ -214,32 +167,16 @@ export function Projects() {
                       )}
                     </div>
 
-                    {/* Action Links (Live Link & GitHub Link) */}
-                    <div className="pt-5 border-t border-zinc-100 dark:border-zinc-800/80 flex items-center gap-3">
-                      {/* GitHub Link */}
-                      {githubLink && (
-                        <a
-                          href={githubLink}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold text-zinc-800 dark:text-zinc-200 bg-zinc-100/80 hover:bg-zinc-200 dark:bg-zinc-800/80 dark:hover:bg-zinc-700/80 border border-zinc-200/80 dark:border-zinc-700/80 transition-all duration-200 hover:scale-[1.02] active:scale-95"
-                          aria-label={`View GitHub repository for ${project.title}`}
-                        >
-                          <GithubIcon className="w-4 h-4 shrink-0" />
-                          <span>GitHub</span>
-                        </a>
-                      )}
-
-                      {/* Live Link */}
+                    <div className="border-t border-zinc-100 pt-5 dark:border-zinc-800/80">
                       {liveDemoLink && (
                         <a
                           href={liveDemoLink}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold text-white bg-indigo-600 hover:bg-indigo-700 dark:bg-indigo-500 dark:hover:bg-indigo-600 shadow-md shadow-indigo-500/20 transition-all duration-200 hover:scale-[1.02] active:scale-95"
-                          aria-label={`Open live demo for ${project.title}`}
+                          className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-indigo-600 px-4 py-2.5 text-xs font-semibold text-white shadow-md shadow-indigo-500/20 transition-all duration-200 hover:scale-[1.02] hover:bg-indigo-700 active:scale-95 dark:bg-indigo-500 dark:hover:bg-indigo-600 sm:text-sm"
+                          aria-label={`Visit ${project.title} website (opens in new tab)`}
                         >
-                          <span>Live Demo</span>
+                          <span>View website</span>
                           <ExternalLink className="w-3.5 h-3.5 shrink-0" />
                         </a>
                       )}
@@ -251,24 +188,6 @@ export function Projects() {
           })}
         </motion.div>
 
-        {/* Quick hint for editing */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-          className="mt-14 text-center"
-        >
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-zinc-100/70 dark:bg-zinc-800/50 border border-zinc-200/60 dark:border-zinc-700/50 text-xs text-zinc-500 dark:text-zinc-400">
-            <FolderGit2 className="w-3.5 h-3.5 text-indigo-500" />
-            <span>
-              Projects are dynamically powered by{" "}
-              <code className="text-zinc-800 dark:text-zinc-200 font-mono font-semibold">
-                src/data/projects.json
-              </code>
-            </span>
-          </div>
-        </motion.div>
       </div>
     </section>
   );

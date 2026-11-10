@@ -6,7 +6,7 @@ export interface Project {
   image: string;
   tags: string[];
   features: string[];
-  githubUrl: string;
+  githubUrl?: string;
   liveUrl?: string;
   category: "Full Stack" | "Frontend" | "Backend / API" | "Engineering";
   featured: boolean;

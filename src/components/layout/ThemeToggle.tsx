@@ -1,13 +1,31 @@
 "use client";
 
-import { useId } from "react";
+import { useId, useSyncExternalStore } from "react";
 import { useTheme } from "next-themes";
 import { Sun, Moon } from "lucide-react";
+
+const subscribe = () => () => {};
+const getClientSnapshot = () => true;
+const getServerSnapshot = () => false;
 
 export function ThemeToggle() {
   const { setTheme, resolvedTheme } = useTheme();
   const instanceId = useId();
+  const mounted = useSyncExternalStore(
+    subscribe,
+    getClientSnapshot,
+    getServerSnapshot,
+  );
   const isDark = resolvedTheme === "dark";
+
+  if (!mounted) {
+    return (
+      <div
+        aria-hidden="true"
+        className="h-9 w-9 rounded-xl border border-zinc-200/80 bg-zinc-100/50 dark:border-zinc-800/80 dark:bg-zinc-800/50"
+      />
+    );
+  }
 
   return (
     <button
