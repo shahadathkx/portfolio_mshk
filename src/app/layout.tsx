@@ -30,8 +30,8 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL("https://github.com/shahadathkx"),
   title: {
-    default: "MSHK | Md Shahadat Hossain Khan — CSE Engineer & Full Stack Developer",
-    template: "%s | MSHK",
+    default: "Mr Khan | Md Shahadat Hossain Khan — CSE Engineer & Full Stack Developer",
+    template: "%s | Mr Khan",
   },
   description:
     "Portfolio of Md Shahadat Hossain Khan — Computer Science Engineer & Full Stack Web Developer specializing in Next.js, React, TypeScript, Node.js, and MongoDB. Actively seeking software engineering & web development internships.",
@@ -96,11 +96,9 @@ export const metadata: Metadata = {
     canonical: "https://github.com/shahadathkx",
   },
   icons: {
-    icon: [
-      { url: "/icon.svg", type: "image/svg+xml" },
-    ],
-    shortcut: "/icon.svg",
-    apple: "/icon.svg",
+    icon: [{ url: "/profile.jpg", type: "image/jpeg" }],
+    shortcut: "/profile.jpg",
+    apple: "/profile.jpg",
   },
 };
 

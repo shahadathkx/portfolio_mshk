@@ -26,6 +26,9 @@ export const portfolioData: PortfolioData = {
     socials: {
       github: "https://github.com/shahadathkx",
       linkedin: "https://linkedin.com/in/shahadathkx",
+      facebook: "https://www.facebook.com/shahadat.h.khan.138295",
+      phone: "+8801724518368",
+      whatsapp: "https://wa.me/8801724518368",
       email: "mailto:shahadathkx@gmail.com",
     },
     resumeUrl: "/resume.pdf",

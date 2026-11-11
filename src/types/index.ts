@@ -61,6 +61,9 @@ export interface PortfolioData {
     socials: {
       github: string;
       linkedin: string;
+      facebook?: string;
+      phone?: string;
+      whatsapp?: string;
       twitter?: string;
       email: string;
     };
